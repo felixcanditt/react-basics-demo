@@ -7,7 +7,8 @@ import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 
 function App() {
-  const [clickedTab, setTab] = useState('');
+  console.log(1);
+  const [clickedTab, setClickedTab] = useState('');
 
   function showNumber(number) {
     console.log(number);
@@ -29,10 +30,13 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton title="Components" onShowNumber={() => setTab(1)} />
-            <TabButton title="JSX" onShowNumber={() => setTab(2)} />
-            <TabButton title="Props" onShowNumber={() => setTab(3)} />
-            <TabButton title="State" onShowNumber={() => setTab(4)} />
+            <TabButton
+              title="Components"
+              onShowNumber={() => setClickedTab(1)}
+            />
+            <TabButton title="JSX" onShowNumber={() => setClickedTab(2)} />
+            <TabButton title="Props" onShowNumber={() => setClickedTab(3)} />
+            <TabButton title="State" onShowNumber={() => setClickedTab(4)} />
           </menu>
           {clickedTab === '' ? 'nix' : ''}
           {clickedTab === 1 ? 'eins' : ''}
