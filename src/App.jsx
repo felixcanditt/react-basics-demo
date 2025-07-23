@@ -7,7 +7,7 @@ import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 
 function App() {
-  const [clickedTab, setClickedTab] = useState('components');
+  const [clickedTab, setClickedTab] = useState('');
 
   function showNumber(number) {
     console.log(number);
@@ -46,13 +46,16 @@ function App() {
               onShowNumber={() => setClickedTab('state')}
             />
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[clickedTab].title}</h3>
-            <p>{EXAMPLES[clickedTab].description}</p>
-            <pre>
-              <code>{EXAMPLES[clickedTab].code}</code>
-            </pre>
-          </div>
+          {!clickedTab && <p>Please select a topic</p>}
+          {clickedTab && (
+            <div id="tab-content">
+              <h3>{EXAMPLES[clickedTab].title}</h3>
+              <p>{EXAMPLES[clickedTab].description}</p>
+              <pre>
+                <code>{EXAMPLES[clickedTab].code}</code>
+              </pre>
+            </div>
+          )}
         </section>
       </main>
     </div>
