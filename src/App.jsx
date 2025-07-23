@@ -7,7 +7,7 @@ import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 
 function App() {
-  const [clickedTab, setClickedTab] = useState('');
+  const [clickedTab, setClickedTab] = useState('components');
 
   function showNumber(number) {
     console.log(number);
@@ -31,38 +31,26 @@ function App() {
           <menu>
             <TabButton
               title={EXAMPLES.components.title}
-              onShowNumber={() => setClickedTab(1)}
+              onShowNumber={() => setClickedTab('components')}
             />
             <TabButton
               title={EXAMPLES.jsx.title}
-              onShowNumber={() => setClickedTab(2)}
+              onShowNumber={() => setClickedTab('jsx')}
             />
             <TabButton
               title={EXAMPLES.props.title}
-              onShowNumber={() => setClickedTab(3)}
+              onShowNumber={() => setClickedTab('props')}
             />
             <TabButton
               title={EXAMPLES.state.title}
-              onShowNumber={() => setClickedTab(4)}
+              onShowNumber={() => setClickedTab('state')}
             />
           </menu>
           <div id="tab-content">
-            <h3>TITLE</h3>
-            <p>
-              {clickedTab === '' ? 'nix' : ''}
-              {clickedTab === 1 ? EXAMPLES.components.description : ''}
-              {clickedTab === 2 ? EXAMPLES.jsx.description : ''}
-              {clickedTab === 3 ? EXAMPLES.props.description : ''}
-              {clickedTab === 4 ? EXAMPLES.state.description : ''}
-            </p>
+            <h3>{EXAMPLES[clickedTab].title}</h3>
+            <p>{EXAMPLES[clickedTab].description}</p>
             <pre>
-              <code>
-                {clickedTab === '' ? 'nix' : ''}
-                {clickedTab === 1 ? EXAMPLES.components.code : ''}
-                {clickedTab === 2 ? EXAMPLES.jsx.code : ''}
-                {clickedTab === 3 ? EXAMPLES.props.code : ''}
-                {clickedTab === 4 ? EXAMPLES.state.code : ''}
-              </code>
+              <code>{EXAMPLES[clickedTab].code}</code>
             </pre>
           </div>
         </section>
