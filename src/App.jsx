@@ -32,26 +32,22 @@ function App() {
             <TabButton
               title={EXAMPLES.components.title}
               onShowNumber={() => setClickedTab('components')}
-              onClickedTab={clickedTab}
-              id="components"
+              isSelected={clickedTab === 'components'}
             />
             <TabButton
               title={EXAMPLES.jsx.title}
               onShowNumber={() => setClickedTab('jsx')}
-              onClickedTab={clickedTab}
-              id="jsx"
+              isSelected={clickedTab === 'jsx'}
             />
             <TabButton
               title={EXAMPLES.props.title}
               onShowNumber={() => setClickedTab('props')}
-              onClickedTab={clickedTab}
-              id="props"
+              isSelected={clickedTab === 'props'}
             />
             <TabButton
               title={EXAMPLES.state.title}
               onShowNumber={() => setClickedTab('state')}
-              onClickedTab={clickedTab}
-              id="state"
+              isSelected={clickedTab === 'state'}
             />
           </menu>
           {!clickedTab && <p>Please select a topic</p>}
