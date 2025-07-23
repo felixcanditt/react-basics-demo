@@ -1,7 +1,12 @@
-export default function TabButton({ title, onShowNumber }) {
+export default function TabButton({ title, onShowNumber, onClickedTab, id }) {
   return (
     <li>
-      <button onClick={onShowNumber}>{title}</button>
+      <button
+        className={onClickedTab === id ? 'active' : ''}
+        onClick={onShowNumber}
+      >
+        {title}
+      </button>
     </li>
   );
 }
