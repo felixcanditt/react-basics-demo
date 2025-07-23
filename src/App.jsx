@@ -24,9 +24,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onShowNumber={() => showNumber(1)} />
-            <TabButton onShowNumber={() => showNumber(2)} />
-            <TabButton onShowNumber={() => showNumber(3)} />
+            <TabButton title="Components" onShowNumber={() => showNumber(1)} />
+            <TabButton title="JSX" onShowNumber={() => showNumber(2)} />
+            <TabButton title="Props" onShowNumber={() => showNumber(3)} />
+            <TabButton title="State" onShowNumber={() => showNumber(4)} />
           </menu>
         </section>
       </main>
