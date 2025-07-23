@@ -7,7 +7,6 @@ import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 
 function App() {
-  console.log(1);
   const [clickedTab, setClickedTab] = useState('');
 
   function showNumber(number) {
