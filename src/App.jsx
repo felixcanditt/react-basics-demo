@@ -1,9 +1,14 @@
+import { useState } from 'react';
+
+import { CORE_CONCEPTS } from './data';
+
 import Header from './components/Header';
 import CoreConcept from './components/CoreConcept';
-import { CORE_CONCEPTS } from './data';
 import TabButton from './components/TabButton';
 
 function App() {
+  const [clickedTab, setTab] = useState('');
+
   function showNumber(number) {
     console.log(number);
   }
@@ -24,11 +29,16 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton title="Components" onShowNumber={() => showNumber(1)} />
-            <TabButton title="JSX" onShowNumber={() => showNumber(2)} />
-            <TabButton title="Props" onShowNumber={() => showNumber(3)} />
-            <TabButton title="State" onShowNumber={() => showNumber(4)} />
+            <TabButton title="Components" onShowNumber={() => setTab(1)} />
+            <TabButton title="JSX" onShowNumber={() => setTab(2)} />
+            <TabButton title="Props" onShowNumber={() => setTab(3)} />
+            <TabButton title="State" onShowNumber={() => setTab(4)} />
           </menu>
+          {clickedTab === '' ? 'nix' : ''}
+          {clickedTab === 1 ? 'eins' : ''}
+          {clickedTab === 2 ? 'zwei' : ''}
+          {clickedTab === 3 ? 'drei' : ''}
+          {clickedTab === 4 ? 'vier' : ''}
         </section>
       </main>
     </div>
