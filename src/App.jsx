@@ -46,20 +46,25 @@ function App() {
               onShowNumber={() => setClickedTab(4)}
             />
           </menu>
-          <p>
-            {clickedTab === '' ? 'nix' : ''}
-            {clickedTab === 1 ? EXAMPLES.components.description : ''}
-            {clickedTab === 2 ? EXAMPLES.jsx.description : ''}
-            {clickedTab === 3 ? EXAMPLES.props.description : ''}
-            {clickedTab === 4 ? EXAMPLES.state.description : ''}
-          </p>
-          <p>
-            {clickedTab === '' ? 'nix' : ''}
-            {clickedTab === 1 ? EXAMPLES.components.code : ''}
-            {clickedTab === 2 ? EXAMPLES.jsx.code : ''}
-            {clickedTab === 3 ? EXAMPLES.props.code : ''}
-            {clickedTab === 4 ? EXAMPLES.state.code : ''}
-          </p>
+          <div id="tab-content">
+            <h3>TITLE</h3>
+            <p>
+              {clickedTab === '' ? 'nix' : ''}
+              {clickedTab === 1 ? EXAMPLES.components.description : ''}
+              {clickedTab === 2 ? EXAMPLES.jsx.description : ''}
+              {clickedTab === 3 ? EXAMPLES.props.description : ''}
+              {clickedTab === 4 ? EXAMPLES.state.description : ''}
+            </p>
+            <pre>
+              <code>
+                {clickedTab === '' ? 'nix' : ''}
+                {clickedTab === 1 ? EXAMPLES.components.code : ''}
+                {clickedTab === 2 ? EXAMPLES.jsx.code : ''}
+                {clickedTab === 3 ? EXAMPLES.props.code : ''}
+                {clickedTab === 4 ? EXAMPLES.state.code : ''}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
