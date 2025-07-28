@@ -5,28 +5,32 @@ import TabButton from './TabButton';
 export default function Examples() {
   const [clickedTab, setClickedTab] = useState('');
 
+  function handleClick(clickedTab) {
+    setClickedTab(clickedTab);
+  }
+
   return (
     <section id="examples">
       <h2>Examples</h2>
       <menu>
         <TabButton
           title={EXAMPLES.components.title}
-          onShowNumber={() => setClickedTab('components')}
+          onHandleClick={() => handleClick('components')}
           isSelected={clickedTab === 'components'}
         />
         <TabButton
           title={EXAMPLES.jsx.title}
-          onShowNumber={() => setClickedTab('jsx')}
+          onHandleClick={() => handleClick('jsx')}
           isSelected={clickedTab === 'jsx'}
         />
         <TabButton
           title={EXAMPLES.props.title}
-          onShowNumber={() => setClickedTab('props')}
+          onHandleClick={() => handleClick('props')}
           isSelected={clickedTab === 'props'}
         />
         <TabButton
           title={EXAMPLES.state.title}
-          onShowNumber={() => setClickedTab('state')}
+          onHandleClick={() => handleClick('state')}
           isSelected={clickedTab === 'state'}
         />
       </menu>
