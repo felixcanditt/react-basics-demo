@@ -1,0 +1,45 @@
+import { useState } from 'react';
+import { EXAMPLES } from '../data';
+import TabButton from './TabButton';
+
+export default function Examples() {
+  const [clickedTab, setClickedTab] = useState('');
+
+  return (
+    <section id="examples">
+      <h2>Examples</h2>
+      <menu>
+        <TabButton
+          title={EXAMPLES.components.title}
+          onShowNumber={() => setClickedTab('components')}
+          isSelected={clickedTab === 'components'}
+        />
+        <TabButton
+          title={EXAMPLES.jsx.title}
+          onShowNumber={() => setClickedTab('jsx')}
+          isSelected={clickedTab === 'jsx'}
+        />
+        <TabButton
+          title={EXAMPLES.props.title}
+          onShowNumber={() => setClickedTab('props')}
+          isSelected={clickedTab === 'props'}
+        />
+        <TabButton
+          title={EXAMPLES.state.title}
+          onShowNumber={() => setClickedTab('state')}
+          isSelected={clickedTab === 'state'}
+        />
+      </menu>
+      {!clickedTab && <p>Please select a topic</p>}
+      {clickedTab && (
+        <div id="tab-content">
+          <h3>{EXAMPLES[clickedTab].title}</h3>
+          <p>{EXAMPLES[clickedTab].description}</p>
+          <pre>
+            <code>{EXAMPLES[clickedTab].code}</code>
+          </pre>
+        </div>
+      )}
+    </section>
+  );
+}
